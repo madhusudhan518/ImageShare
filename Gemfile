@@ -60,3 +60,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# A Ruby gem for on-the-fly processing - suitable for image uploading
+gem 'dragonfly'
