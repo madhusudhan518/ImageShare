@@ -1,6 +1,6 @@
 class Album < ApplicationRecord
   belongs_to :user
-  has_many :photos, dependent: :destroy, counter_cache: true
+  has_many :photos, dependent: :destroy
 
   validates :name, presence: true
 end
