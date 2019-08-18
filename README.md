@@ -7,16 +7,17 @@ Users can create their account and share their albums and photos online, where o
 \curl -sSL https://get.rvm.io | bash
 ```
    Please go through [document](https://rvm.io/rvm/install)
+
 **2. Ruby**
 
-  This project using ruby version 2.3.7.
+  This project using ruby version 2.3.7. Install ruby using below command.
 
 ```
 Ex: rvm install 2.3.7
 ```
   Please feel free to change version on ruby-version file/gemfile. Please go through [document](https://rvm.io/rubies/installing) for more help on installing ruby.
 
-**3. Clone project from github repository**
+**3. Clone github repository**
 ```
 git clone git@github.com:madhusudhan518/ImageShare.git
 ```
@@ -27,7 +28,7 @@ change directory to project root folder
 ```
 cd ImageShare
 ```
-As soon we enter into project directory gemset will created automatically as we specified ruby version and ruby gemset in project root path.
+As soon we enter into project directory gemset will created automatically as we specified ruby version and ruby gemset in project root path in files .ruby-version and .ruby-gemset.
 
 **4. Bundler**
   Install Bundler

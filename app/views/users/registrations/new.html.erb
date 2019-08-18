@@ -1,10 +1,12 @@
+
+
 <div class="d-flex justify-content-center">
   <div class="brand_logo_container">
     <img src="<%= asset_url('i.jpeg') %>" class="brand_logo" alt="Logo">
   </div>
 </div>
 <div class="d-flex justify-content-center form_container">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="input-group mb-3">
@@ -21,24 +23,23 @@
       <%= f.password_field :password, placeholder: "Enter Password", autocomplete: "current-password", class: "form-control input_pass" %>
     </div>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="form-group">
-        <div class="custom-control custom-checkbox">
-          <%= f.check_box :remember_me , class: "custom-control-input",id: "customControlInline" %>
-          <label class="custom-control-label" for="customControlInline">Remember me</label>
-        </div>
+    <div class="input-group mb-2">
+      <div class="input-group-append">
+        <span class="input-group-text"><i class="fas fa-key"></i></span>
       </div>
-    <% end %>
+      <%= f.password_field :password_confirmation, placeholder: "Re-Enter Password", autocomplete: "current-password", class: "form-control input_pass" %>
+    </div>
+
 
     <div class="d-flex justify-content-center mt-3 login_container">
-      <%= f.submit "Log in", class: "btn login_btn" %>
+      <%= f.submit "Sign Up", class: "btn login_btn" %>
     </div>
 
   <% end %>
 </div>
 <div class="mt-4">
   <div class="d-flex justify-content-center links">
-    Don't have an account? <a href="/users/sign_up" class="ml-2">Sign Up</a>
+    Don you have an account? <a href="/users/sign_in" class="ml-2">Log In</a>
   </div>
   </div>
 </div>
