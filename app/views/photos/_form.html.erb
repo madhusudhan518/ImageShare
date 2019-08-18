@@ -12,21 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image_uid %>
-    <%= form.text_field :image_uid %>
-  </div>
-
-  <div class="field">
     <%= form.label :tag_line %>
     <%= form.text_field :tag_line %>
   </div>
 
   <div class="field">
-    <%= form.label :album_id %>
-    <%= form.number_field :album_id %>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
