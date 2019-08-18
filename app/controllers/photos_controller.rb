@@ -15,8 +15,6 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    p "album"
-    p @album
     @photo = @album.photos.new
   end
 
