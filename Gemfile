@@ -66,3 +66,5 @@ gem 'dragonfly'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
+
+gem 'pry', '~> 0.12.2'

@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_photo, :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_album, only: [:new, :create, :index]
 
   # GET /photos
   # GET /photos.json
@@ -14,7 +15,9 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    @photo = Photo.new
+    p "album"
+    p @album
+    @photo = @album.photos.new
   end
 
   # GET /photos/1/edit
@@ -25,7 +28,6 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
@@ -69,6 +71,11 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:image_uid, :tag_line, :album_id)
+      params.permit(:image, :tag_line, :album_id)
+    end
+
+    # Use callbacks to share common setup or constraints between actions.
+    def set_album
+      @album = Album.find_by(params[:album_id])
     end
 end
